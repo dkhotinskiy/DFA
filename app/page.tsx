@@ -66,7 +66,7 @@ export default function Home() {
 			<section data-predefined>
 				<h2>Predefined DFAs</h2>
 				<button onClick={endsWithOneDFA}>Ends with 1</button>
-				<button onClick={containsSubstringDFA}>Contains the substring "1001"</button>
+				<button onClick={containsSubstringDFA}>Contains the substring &quot;1001&quot;</button>
 			</section>
 
 			<pre data-formal-desc className={firaCode.className}>{formalDesc}</pre>

@@ -1,6 +1,6 @@
 ## Viewing online
 
-Navigate to [Link](Link) to view the project online.
+Navigate to [https://dfa-sigma.vercel.app](https://dfa-sigma.vercel.app) to view the project online.
 
 ## Running localy
 
