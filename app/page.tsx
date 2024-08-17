@@ -134,7 +134,7 @@ export default function Home() {
 
 				<section data-alphabet>
 					<div data-input>
-						<label htmlFor='alphabet'>Enter the alphabet for DFA (use "," as seperators):</label>
+						<label htmlFor='alphabet'>Enter the alphabet for DFA (use &ldquo;,&rdquo; as seperators):</label>
 						<input type='text' id='alphabet' disabled={ currentStep > 1 } />
 						{ currentStep == 1 ? <button data-submit onClick={nextStep}>&#8594;</button> : <></> }
 					</div>
