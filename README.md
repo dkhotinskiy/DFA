@@ -18,6 +18,12 @@ Navigate to the folder by running the following command:
 cd DFA
 ```
 
+In the DFA folder, run the following command to install all modules required to run the project:
+
+```bash
+npm i
+```
+
 And then, run the development server using:
 
 ```bash

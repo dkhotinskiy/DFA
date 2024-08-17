@@ -3,11 +3,11 @@ export class DFA {
 	/** The name of the class. */
 	public static readonly className: string = 'DFA'
 
+	private alphabet: Array<string> = []
 	private stateQuantity: number = 0
 	private stateMatrix: Array<Array<number>> = []
 	private startState: number = 0
 	private passStates: Array<number> = []
-	private alphabet: Array<string> = []
 
 	/** Creates an instance of the DFA class. */
 	constructor() {}
@@ -66,9 +66,31 @@ export class DFA {
 			const row = this.stateMatrix[rowIndex]
 
 			res += `-`.repeat(12 + 8 * this.alphabet.length - 2) + '\n'
-			res += `   q${rowIndex == '0' ? '₀' : rowIndex == '1' ? '₁' : rowIndex == '2' ? '₂' : rowIndex == '3' ? '₃' : rowIndex == '4' ? '₄' : rowIndex}`
+			res += `   q${
+				rowIndex == '0' ? '₀' :
+				rowIndex == '1' ? '₁' :
+				rowIndex == '2' ? '₂' :
+				rowIndex == '3' ? '₃' :
+				rowIndex == '4' ? '₄' :
+				rowIndex == '5' ? '₅' :
+				rowIndex == '6' ? '₆' :
+				rowIndex == '7' ? '₇' :
+				rowIndex == '8' ? '₈' :
+				rowIndex == '9' ? '₉' : rowIndex
+			}`
 			for (const columnIndex in row) {
-				res += `   |   q${row[columnIndex] == 0 ? '₀' : row[columnIndex] == 1 ? '₁' : row[columnIndex] == 2 ? '₂' : row[columnIndex] == 3 ? '₃' : row[columnIndex] == 4 ? '₄' : row[columnIndex]}`
+				res += `   |   q${
+					row[columnIndex] == 0 ? '₀' :
+					row[columnIndex] == 1 ? '₁' :
+					row[columnIndex] == 2 ? '₂' :
+					row[columnIndex] == 3 ? '₃' :
+					row[columnIndex] == 4 ? '₄' :
+					row[columnIndex] == 5 ? '₅' :
+					row[columnIndex] == 6 ? '₆' :
+					row[columnIndex] == 7 ? '₇' :
+					row[columnIndex] == 8 ? '₈' :
+					row[columnIndex] == 9 ? '₉' : row[columnIndex]
+				}`
 			}
 			res += '\n'
 		}
@@ -99,7 +121,18 @@ export class DFA {
 
 		// Loop through states, adding states to the array
 		for (let i = 0; i < this.stateQuantity; i++) {
-			stateArray.push(`q${i == 0 ? '₀' : i == 1 ? '₁' : i == 2 ? '₂' : i == 3 ? '₃' : i == 4 ? '₄' : i}`)
+			stateArray.push(`q${
+				i == 0 ? '₀' :
+				i == 1 ? '₁' :
+				i == 2 ? '₂' :
+				i == 3 ? '₃' :
+				i == 4 ? '₄' :
+				i == 5 ? '₅' :
+				i == 6 ? '₆' :
+				i == 7 ? '₇' :
+				i == 8 ? '₈' :
+				i == 9 ? '₉' : i
+			}`)
 		}
 
 		// Return states as a single string
@@ -114,14 +147,14 @@ export class DFA {
 				this.startState == 4 ? 'q₄' : `q${this.startState}`
 	}
 
-	/** Sets the quantity of states within DFA. */
-	set StateQuantity(quantity: number) {
-		this.stateQuantity = quantity
-	}
-
 	/** Sets the alphabet of DFA. */
 	set Alphabet(alphabet: Array<string>) {
 		this.alphabet = alphabet
+	}
+
+	/** Sets the quantity of states within DFA. */
+	set StateQuantity(quantity: number) {
+		this.stateQuantity = quantity
 	}
 
 	/** Sets the state matrix of the DFA. */
